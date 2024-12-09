@@ -1,0 +1,53 @@
+name: flutter_basics
+description: "A new Flutter project."
+
+# Prevent accidental publishing to pub.dev
+publish_to: 'none'
+
+# Version and build number
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+
+# Dependencies
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8  # iOS-style icons
+  http: ^0.13.6
+  carousel_slider: ^4.2.0
+  intl: ^0.18.0
+  encrypt: ^5.0.3
+  convert: ^3.1.2
+  crypto: ^3.0.6
+  flutter_secure_storage: ^9.2.2
+  image_picker: ^1.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0  # Recommended lints for good coding practices
+
+# Flutter-specific configuration
+flutter:
+  uses-material-design: true  # Ensures Material Icons font inclusion
+
+  # Assets configuration
+  assets:
+    - assets/images/
+    - assets/private.pem
+    - assets/public.pem
+
+  # To add custom fonts, use the format below:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
