@@ -17,7 +17,7 @@ class AESEncryption {
     String username = await SecureStorage().readSecureData("username");
     _aesKeyHex = await SecureStorage().readSecureData(username);
     _aesKeyBytes = _decodeHex(_aesKeyHex);
-    print("Decoded AES Key: $_aesKeyBytes");
+    //print("Decoded AES Key: $_aesKeyBytes");
   }
 
   void _generateRandomIV() {
