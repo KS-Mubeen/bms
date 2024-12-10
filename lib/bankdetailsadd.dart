@@ -38,6 +38,10 @@ class _SubscriptionAddState extends State<BankDetailsAdd> {
 
   bool isLoading = false;
   String errorMessage = '';
+  bool _isAccountNumberVisible = false;
+  bool _isBalanceVisible = false;
+  bool _isCvvVisible = false;
+  bool _isCardNumberVisible = false;
 
 
   @override
@@ -211,8 +215,20 @@ class _SubscriptionAddState extends State<BankDetailsAdd> {
                           TextFormField(
                             controller: _accountNumberController,
                             style: TextStyle(color: Color(0xFF003B73)),
+                            obscureText: !_isAccountNumberVisible,
                             keyboardType: TextInputType.numberWithOptions(),
                             decoration: InputDecoration(
+                              suffixIcon: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    _isAccountNumberVisible = !_isAccountNumberVisible; // Toggle visibility
+                                  });
+                                },
+                                child: Icon(
+                                  _isAccountNumberVisible ? Icons.visibility : Icons.visibility_off,
+                                  //color: Color(0xFF0078A8),
+                                ),
+                              ),
                               prefixIcon: Icon(Icons.credit_card),
                               labelText: 'Account Number',
                               labelStyle: TextStyle(color: Color(0xFF0078A8)),
@@ -227,6 +243,7 @@ class _SubscriptionAddState extends State<BankDetailsAdd> {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                             ),
+
                             validator: (value) {
                               if (value == null || value.isEmpty) {
                                 return 'Please enter a service name';
@@ -410,9 +427,21 @@ class _SubscriptionAddState extends State<BankDetailsAdd> {
                           TextFormField(
                             controller: _balanceController,
                             style: TextStyle(color: Color(0xFF003B73)),
+                            obscureText: !_isBalanceVisible,
                             keyboardType: TextInputType.numberWithOptions(),
                             decoration: InputDecoration(
                               prefixIcon: Icon(CupertinoIcons.money_dollar),
+                              suffixIcon: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    _isBalanceVisible = !_isBalanceVisible; // Toggle visibility
+                                  });
+                                },
+                                child: Icon(
+                                  _isBalanceVisible ? Icons.visibility : Icons.visibility_off,
+                                  //color: Color(0xFF0078A8),
+                                ),
+                              ),
                               labelText: 'Balance',
                               labelStyle: TextStyle(color: Color(0xFF0078A8)),
                               enabledBorder: OutlineInputBorder(
@@ -439,9 +468,21 @@ class _SubscriptionAddState extends State<BankDetailsAdd> {
                           TextFormField(
                             controller: _cvvController,
                             style: TextStyle(color: Color(0xFF003B73)),
+                            obscureText: !_isCvvVisible,
                             keyboardType: TextInputType.numberWithOptions(),
                             decoration: InputDecoration(
                               prefixIcon: Icon(Icons.security),
+                              suffixIcon: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    _isCvvVisible = !_isCvvVisible; // Toggle visibility
+                                  });
+                                },
+                                child: Icon(
+                                  _isCvvVisible ? Icons.visibility : Icons.visibility_off,
+                                  //color: Color(0xFF0078A8),
+                                ),
+                              ),
                               labelText: 'CVV',
                               labelStyle: TextStyle(color: Color(0xFF0078A8)),
                               enabledBorder: OutlineInputBorder(
@@ -468,9 +509,21 @@ class _SubscriptionAddState extends State<BankDetailsAdd> {
                           TextFormField(
                             controller: _cardNumberController,
                             style: TextStyle(color: Color(0xFF003B73)),
+                            obscureText: !_isCardNumberVisible,
                             keyboardType: TextInputType.numberWithOptions(),
                             decoration: InputDecoration(
                               prefixIcon: Icon(CupertinoIcons.creditcard),
+                              suffixIcon: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    _isCardNumberVisible = !_isCardNumberVisible; // Toggle visibility
+                                  });
+                                },
+                                child: Icon(
+                                  _isCardNumberVisible ? Icons.visibility : Icons.visibility_off,
+                                  //color: Color(0xFF0078A8),
+                                ),
+                              ),
                               labelText: 'Card Number',
                               labelStyle: TextStyle(color: Color(0xFF0078A8)),
                               enabledBorder: OutlineInputBorder(
