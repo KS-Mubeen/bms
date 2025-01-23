@@ -132,8 +132,6 @@ class MasterKeyPage extends StatelessWidget {
                               } else {
                                 HashingHelper hashingHelper = HashingHelper();
                                 String hashedKey = hashingHelper.computeSHA256(confirmKeyController.text);
-                                //print("Hashed key : ${hashedKey}");
-                                // Navigate to the next page or save the key
                                 SecureStorage().writeSecureData("username", username);
                                 SecureStorage().writeSecureData(username, hashedKey);
 

@@ -47,13 +47,11 @@ class MyHomePage extends StatelessWidget {
 
       var jsonResponse = jsonDecode(response.body);
       if (jsonResponse['status'] == 1) {
-        print('Success');
         String username = jsonResponse['username'];
         int id = int.parse(jsonResponse['id']);
 
 
         String aesKey = await SecureStorage().readSecureData(username);
-        print("AES KEY = $aesKey");
 
 
         if (aesKey.isEmpty) {

@@ -200,38 +200,38 @@ class _BankdetailsState extends State<Bankdetails> {
                             child: Text('Edit'),
                           ),
                           SizedBox(width: 10),
-                          ElevatedButton(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => BankdetailsView(
-                                    id: bankDetail['id'] ?? '',
-                                    accountNumber: aesEncryption.decrypt(bankDetail['account_number']).toString() ?? 'No Account Number',
-                                    accountTypeId: bankDetail['account_type_id']?.toString() ?? 'No Account Type',
-                                    bankName: aesEncryption.decrypt(bankDetail['bank_name']) ?? 'No Bank Name',
-                                    branchName: aesEncryption.decrypt(bankDetail['branch_name']).toString() ?? 'No Branch Name',
-                                    branchCode: aesEncryption.decrypt(bankDetail['branch_code']).toString() ?? 'No Branch Code',
-                                    accountHolderName: aesEncryption.decrypt(bankDetail['account_holder_name']).toString() ?? 'No Account Holder Name',
-                                    currencyId: bankDetail['currency_id']?.toString() ?? 'No Currency ID',
-                                    balance: aesEncryption.decrypt(bankDetail['balance']).toString() ?? 'No Balance',
-                                    cvv: aesEncryption.decrypt(bankDetail['cvv']).toString() ?? 'No CVV',
-                                    cardNumber: aesEncryption.decrypt(bankDetail['card_number']).toString() ?? 'No Card Number',
-                                    cardCreationDate: bankDetail['card_creation_date']?.toString() ?? 'No Card Creation Date',
-                                    cardExpiryDate: bankDetail['card_expiry_date']?.toString() ?? 'No Card Expiry Date',
-                                    phoneNumber: aesEncryption.decrypt(bankDetail['phone_number']).toString() ?? 'No Phone Number',
-                                    emailAddress: aesEncryption.decrypt(bankDetail['email_address']).toString() ?? 'No Email Address',
-                                    accountStatusId: bankDetail['account_status_id']?.toString() ?? 'No Account Status',
-                                  ),
-                                ),
-                              );
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Color(0xFF0078A8),
-                              foregroundColor: Colors.white,
-                            ),
-                            child: Text('View'),
-                          ),
+                          // ElevatedButton(
+                          //   onPressed: () {
+                          //     Navigator.push(
+                          //       context,
+                          //       MaterialPageRoute(
+                          //         builder: (context) => BankdetailsView(
+                          //           //id: bankDetail['id'] ?? '',
+                          //           //accountNumber: aesEncryption.decrypt(bankDetail['account_number']).toString() ?? 'No Account Number',
+                          //           //accountTypeId: bankDetail['account_type_id']?.toString() ?? 'No Account Type',
+                          //           //bankName: aesEncryption.decrypt(bankDetail['bank_name']) ?? 'No Bank Name',
+                          //           //branchName: aesEncryption.decrypt(bankDetail['branch_name']).toString() ?? 'No Branch Name',
+                          //           //branchCode: aesEncryption.decrypt(bankDetail['branch_code']).toString() ?? 'No Branch Code',
+                          //           //accountHolderName: aesEncryption.decrypt(bankDetail['account_holder_name']).toString() ?? 'No Account Holder Name',
+                          //           //currencyId: bankDetail['currency_id']?.toString() ?? 'No Currency ID',
+                          //           //balance: aesEncryption.decrypt(bankDetail['balance']).toString() ?? 'No Balance',
+                          //           //cvv: aesEncryption.decrypt(bankDetail['cvv']).toString() ?? 'No CVV',
+                          //           //cardNumber: aesEncryption.decrypt(bankDetail['card_number']).toString() ?? 'No Card Number',
+                          //           //cardCreationDate: bankDetail['card_creation_date']?.toString() ?? 'No Card Creation Date',
+                          //           //cardExpiryDate: bankDetail['card_expiry_date']?.toString() ?? 'No Card Expiry Date',
+                          //           //phoneNumber: aesEncryption.decrypt(bankDetail['phone_number']).toString() ?? 'No Phone Number',
+                          //           //emailAddress: aesEncryption.decrypt(bankDetail['email_address']).toString() ?? 'No Email Address',
+                          //           //accountStatusId: bankDetail['account_status_id']?.toString() ?? 'No Account Status',
+                          //         ),
+                          //       ),
+                          //     );
+                          //   },
+                          //   style: ElevatedButton.styleFrom(
+                          //     backgroundColor: Color(0xFF0078A8),
+                          //     foregroundColor: Colors.white,
+                          //   ),
+                          //   child: Text('View'),
+                          // ),
                         ],
                       ),
                     ],
