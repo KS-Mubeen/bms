@@ -182,7 +182,7 @@ class _BankdetailsState extends State<Bankdetails> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => BankdetailsView(
-                                    bankName: bankDetail['bank_name'] ?? 'No Bank Name',
+                                    bankName: bankDetail['bank_name'] ?? 'No Bank Name Mubeen',
                                     accountHolder: bankDetail['account_holder_name'] ?? 'No Account Holder',
                                     accountNumber: bankDetail['account_number']?.toString() ?? 'No Account Number',
                                     ifsc: bankDetail['ifsc']?.toString() ?? 'No IFSC',
